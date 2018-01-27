@@ -1,2 +1,2 @@
 # compile typescript
-tsc
+./node_modules/.bin/tsc

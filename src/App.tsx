@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import * as React from 'react';
 import { Component } from 'react';
 import {
@@ -12,6 +6,8 @@ import {
   Text,
   View
 } from 'react-native';
+import * as AppCenter from "appcenter";
+import * as Analytics from 'appcenter-analytics';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -20,7 +16,15 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-export default class App extends Component<{}> {
+export default class App extends Component<{}, {}> {
+  constructor(props: {}) {
+    super(props);
+  }
+
+  async componentDidMount() {
+    await Analytics.setEnabled(true);
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -42,8 +46,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    alignItems: 'center'
   },
   welcome: {
     fontSize: 20,

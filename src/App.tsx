@@ -1,13 +1,9 @@
 import * as React from 'react';
 import { Component } from 'react';
-import {
-  Platform,
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
-import * as AppCenter from "appcenter";
+import { Platform, StyleSheet, Text, View } from 'react-native';
 import * as Analytics from 'appcenter-analytics';
+import { NativeRouter, Route } from 'react-router-native';
+
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' +
@@ -17,10 +13,6 @@ const instructions = Platform.select({
 });
 
 export default class App extends Component<{}, {}> {
-  constructor(props: {}) {
-    super(props);
-  }
-
   async componentDidMount() {
     await Analytics.setEnabled(true);
   }
@@ -29,7 +21,7 @@ export default class App extends Component<{}, {}> {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Test. Welcome to React Native!
+          Welcome to React Native!
         </Text>
         <Text style={styles.instructions}>
           To get started, edit App.js

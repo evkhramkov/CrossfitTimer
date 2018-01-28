@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Component } from 'react';
-import { Platform, StyleSheet, Text, View } from 'react-native';
+import { Platform, StyleSheet, View, Text, Button } from 'react-native';
 import * as Analytics from 'appcenter-analytics';
 import { NativeRouter, Route } from 'react-router-native';
 
@@ -12,7 +12,22 @@ const instructions = Platform.select({
     'Shake or press menu button for dev menu',
 });
 
-export default class App extends Component<{}, {}> {
+export interface AppState {
+  running: boolean;
+  time: number;
+}
+
+export default class App extends Component<{}, AppState> {
+  private timer: number;
+
+  constructor(props: {}) {
+    super(props);
+    this.state = {
+      running: false,
+      time: 0
+    };
+  }
+
   async componentDidMount() {
     await Analytics.setEnabled(true);
   }
@@ -20,17 +35,22 @@ export default class App extends Component<{}, {}> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
-        </Text>
-        <Text style={styles.instructions}>
-          To get started, edit App.js
-        </Text>
-        <Text style={styles.instructions}>
-          {instructions}
-        </Text>
+        <Text style={styles.time}>{this.state.time}</Text>
+        <Button title="Start timer" onPress={this.startTimer} />
       </View>
     );
+  }
+
+  private startTimer = () => {
+    if (this.timer) { clearInterval(this.timer) };
+    this.setState({ running: true, time: 0 });
+    this.timer = setInterval(() => this.tickTimer(100), 100);
+  }
+
+  private tickTimer = (delta: number) => {
+    this.setState(state => ({
+      time: state.time + delta
+    }));
   }
 }
 
@@ -40,14 +60,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center'
   },
-  welcome: {
-    fontSize: 20,
+  time: {
     textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    marginBottom: 5
+  }
 });

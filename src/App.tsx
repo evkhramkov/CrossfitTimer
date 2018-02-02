@@ -4,12 +4,26 @@ import { Platform, StyleSheet, View, Text, Button } from 'react-native';
 import * as Analytics from 'appcenter-analytics';
 import { NativeRouter, Route } from 'react-router-native';
 
+class Circle extends Component<{}, {}> {
+  render() {
+    return (
+      <View style={circleStyles.circle}>
+        {this.props.children}
+      </View>
+    )
+  }
+}
 
-const instructions = Platform.select({
-  ios: 'Press Cmd+R to reload,\n' +
-    'Cmd+D or shake for dev menu',
-  android: 'Double tap R on your keyboard to reload,\n' +
-    'Shake or press menu button for dev menu',
+const circleStyles = StyleSheet.create({
+  circle: {
+    width: 200,
+    height: 200,
+    borderRadius: 100,
+    borderWidth: 15,
+    borderColor: 'red',
+    justifyContent: 'center',
+    alignItems: 'center'
+  }
 });
 
 export interface AppState {
@@ -35,8 +49,10 @@ export default class App extends Component<{}, AppState> {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.time}>{this.state.time}</Text>
-        <Button title="Start timer" onPress={this.startTimer} />
+        <Circle>
+          <Text style={styles.time}>{this.state.time}</Text>
+          <Button title="Start timer" onPress={this.startTimer} />
+        </Circle>
       </View>
     );
   }

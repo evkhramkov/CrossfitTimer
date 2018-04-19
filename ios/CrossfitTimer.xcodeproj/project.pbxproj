@@ -1606,8 +1606,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bitbroz.crossfit-timer";
 				PRODUCT_NAME = CrossfitTimer;
-				PROVISIONING_PROFILE = "bc5a9cd4-a25c-4c4e-80f7-8cebc49a3d01";
-				PROVISIONING_PROFILE_SPECIFIER = "crossfit-timer-distribution";
+				PROVISIONING_PROFILE = "fd1f091c-9bfa-4cf8-bb25-b1b90e6deb0b";
+				PROVISIONING_PROFILE_SPECIFIER = "crossfit-timer-development";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1636,8 +1636,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bitbroz.crossfit-timer";
 				PRODUCT_NAME = CrossfitTimer;
-				PROVISIONING_PROFILE = "bc5a9cd4-a25c-4c4e-80f7-8cebc49a3d01";
-				PROVISIONING_PROFILE_SPECIFIER = "crossfit-timer-distribution";
+				PROVISIONING_PROFILE = "fd1f091c-9bfa-4cf8-bb25-b1b90e6deb0b";
+				PROVISIONING_PROFILE_SPECIFIER = "crossfit-timer-development";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;

@@ -1586,7 +1586,7 @@
 			baseConfigurationReference = D4BE56C650F0AC7BE05D6BFD /* Pods-CrossfitTimer.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
@@ -1606,8 +1606,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bitbroz.crossfit-timer";
 				PRODUCT_NAME = CrossfitTimer;
-				PROVISIONING_PROFILE = "fd1f091c-9bfa-4cf8-bb25-b1b90e6deb0b";
-				PROVISIONING_PROFILE_SPECIFIER = "crossfit-timer-development";
+				PROVISIONING_PROFILE = "80f85e79-9106-4235-8baf-8ef15f9a5a02";
+				PROVISIONING_PROFILE_SPECIFIER = "crossfit-timer-distribution";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -1617,7 +1617,7 @@
 			baseConfigurationReference = 840613C5FDE488151008F999 /* Pods-CrossfitTimer.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = R2L8TU8NEV;
@@ -1636,8 +1636,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.bitbroz.crossfit-timer";
 				PRODUCT_NAME = CrossfitTimer;
-				PROVISIONING_PROFILE = "fd1f091c-9bfa-4cf8-bb25-b1b90e6deb0b";
-				PROVISIONING_PROFILE_SPECIFIER = "crossfit-timer-development";
+				PROVISIONING_PROFILE = "80f85e79-9106-4235-8baf-8ef15f9a5a02";
+				PROVISIONING_PROFILE_SPECIFIER = "crossfit-timer-distribution";
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
